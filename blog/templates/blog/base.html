@@ -2,6 +2,8 @@
     <html>
         <head>
             <title>Hey, everyone</title>
+            
+
             <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
             <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
             <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -10,9 +12,10 @@
         <body>
             <div class="page-header">
              {% if user.is_authenticated %}
-        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <!-- | <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></ снять комментарий если что - то не будет работать span></a> -->
              {% endif %}
                 <a href="{% url 'blog.views.post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
                 <h1><a href="/">Мужицкий Блог</a></h1>
             </div>
             <div class="content container">
