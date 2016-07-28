@@ -4,6 +4,11 @@
         <h1>Новый пост</h1>
         <form method="POST" class="post-form">{% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="save btn btn-default">Сохранить</button>
+            <button type="submit" class="save btn btn-default">Отложить</button>
+
+            <button type="submit" class="save btn btn-default">Отложить</button>
+                   
+            <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Опубликовать сейчас</a>
+            
         </form>
     {% endblock %}
