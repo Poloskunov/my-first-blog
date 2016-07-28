@@ -5,10 +5,18 @@
         <form method="POST" class="post-form">{% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="save btn btn-default">Отложить</button>
+            <input type="checkbox" class="checkbox" id="checkbox" name = "publish_now" />
+            <label for="checkbox">Опубликовать мгновенно</label>
 
-            <button type="submit" class="save btn btn-default">Отложить</button>
+
+
+
+
+            {% if pk %}
 
             <a class="btn btn-default" href="{% url 'post_publish' pk=pk %}">Опубликовать сейчас</a>
+            {% endif %}
 
         </form>
+
     {% endblock %}
